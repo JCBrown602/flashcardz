@@ -1,5 +1,6 @@
 from tkinter import *
 from random import randint
+from cards import words
 
 root = Tk()
 root.title('Spanish Language Cards')
@@ -7,20 +8,6 @@ photo = PhotoImage(file = 'mex-flag_2.png')
 root.iconphoto(False, photo)
 root.geometry("550x410")
 
-words = [
-	(("Hola"), ("Hello")),			#1
-	(("Adios"), ("Goodbye")),
-	(("Por favor"), ("Please")),
-	(("Gracias"), ("Thank you")),
-	(("Lo siento"), ("Sorry")),		#5
-	(("Salud"), ("Bless you")),
-	(("Si"), ("Yes")),
-	(("No"), ("No")),
-	(("Quien?"), ("Who?")),
-	(("Que?"), ("What?")),			#10
-	(("Por que?"), ("Why?")),
-	(("Donde"), ("Where?"))
-]
 
 # Get a count of the words
 count = len(words)
@@ -30,6 +17,11 @@ def next():
 	random_word = randint(0, count-1)
 	# Update label
 	spanish_word.config(text=words[random_word][0])
+
+def answer():
+	pass
+
+
 
 spanish_word = Label(root, text="", font=("Helvetica", 30))
 spanish_word.pack(pady=50)
